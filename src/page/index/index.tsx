@@ -1,4 +1,4 @@
-import React, { useEffect, lazy, Suspense, memo, useState, useMemo, ReactNode, FormEvent } from 'react'
+import React, { useEffect, lazy, Suspense, memo, useState, useMemo, ReactNode, FormEvent, useLayoutEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { RouteComponentProps, useHistory,  } from 'react-router'
 import { getBtcPrice, getBtcPriceType, getBtcPriceTypeList } from '/@http/index';
@@ -106,6 +106,10 @@ const Index =  (props: RouteComponentProps) => {
         })
         setList(_list);
     }, [kList]);
+
+    useLayoutEffect(() => {
+        console.log(`重回`);
+    }, [])
 
     const test = async () => {
         const _: getBtcPriceType = await getBtcPrice();

@@ -1,0 +1,320 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+  margin: 0;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+ol,
+ul {
+  list-style: none;
+}
+input {
+  -webkit-box-shadow: 0 0 0 1000px #f3f4f5 inset !important;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  /*背景颜色*/
+  box-shadow: 0 0 0 60px #eee inset;
+  /*字的颜色*/
+  -webkit-text-fill-color: #878787;
+}
+blockquote,
+q {
+  quotes: none;
+}
+.ant-modal-content {
+  border-radius: 5px!important;
+}
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: #00a94f !important;
+}
+.ant-tabs-ink-bar {
+  background: #00a94f !important;
+}
+.ant-table-thead > tr > th {
+  background: none!important;
+  font-weight: 400;
+  font-size: 12px;
+  color: #666;
+}
+.column-right {
+  text-align: center!important;
+  padding: 16px 0px!important;
+  /* text-indent: 30px; */
+}
+.ant-table-column-sorter-up,
+.ant-table-column-sorter-down {
+  font-size: 9px;
+}
+td.ant-table-column-sort {
+  background: none!important;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*:focus {
+  outline: none;
+}
+html body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+div {
+  /* cursor: pointer; */
+}
+li {
+  list-style: none;
+}
+.float {
+  float: left;
+}
+.float:after {
+  content: "";
+  /*设置内容为空*/
+  height: 0;
+  /*高度为0*/
+  line-height: 0;
+  /*行高为0*/
+  display: block;
+  /*将文本转为块级元素*/
+  visibility: hidden;
+  /*将元素隐藏*/
+  clear: both;
+  /*清除浮动*/
+}
+.content {
+  margin: 0 auto;
+}
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+.swiper-pagination-bullet-active {
+  background-color: #ffffff;
+}
+.showThreeText {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+strong {
+  font-weight: 600;
+}
+em {
+  font-style: oblique;
+}
+blockquote {
+  border-left: 4px solid #ccc !important;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+  padding-left: 16px !important;
+}
+.ql-align-right {
+  text-align: right;
+}
+.ql-align-justify {
+  text-align: justify;
+}
+.ql-syntax {
+  background-color: #23241f;
+  color: #f8f8f2;
+  overflow: visible;
+}
+pre {
+  white-space: pre-wrap !important;
+  margin-bottom: 5px !important;
+  margin-top: 5px !important;
+  padding: 5px 10px !important;
+}
+.ql-indent-1:not(.ql-direction-rtl) {
+  background-color: #23241f;
+  color: #f8f8f2;
+  overflow: visible;
+  padding-left: 3em;
+}
+.ql-indent-2:not(.ql-direction-rtl) {
+  padding-left: 6em;
+}
+.ql-align-justify {
+  list-style: inside;
+  padding-left: 1.5em !important;
+}
+ol li {
+  list-style: decimal;
+}
+.w1042 {
+  width: 1042px;
+  margin: 0 auto;
+}
+.video-react .video-react-control-bar {
+  background: none !important;
+}
+button {
+  border: none;
+}
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+button {
+  border: none;
+}
+.pointer {
+  cursor: pointer;
+}
+.App {
+  text-align: center;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-link {
+  color: #61dafb;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+button {
+  font-size: calc(10px + 2vmin);
+}

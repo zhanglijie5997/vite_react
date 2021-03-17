@@ -143,12 +143,12 @@ q {
     border-radius: 5px!important;
 }
 
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+/* .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
     color: #00a94f!important;
 }
 .ant-tabs-ink-bar {
     background: #00a94f!important;
-}
+} */
 
 .ant-table-thead > tr > th {
     background: none!important;

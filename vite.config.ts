@@ -7,7 +7,8 @@ console.log(process.env.NODE_ENV)
 export default defineConfig({
     plugins: [
         reactRefresh(),
-        gzip()
+        gzip(),
+
     ],
     resolve: {
         alias: {
@@ -25,6 +26,13 @@ export default defineConfig({
         modules: {
             scopeBehaviour: "local",
             globalModulePaths: [], // 全局样式
+        },
+        preprocessorOptions: {
+            less: {
+                lessOptions: { // important extra layer for less-loader^6.0.0
+                    javascriptEnabled: true
+                }
+            }
         }
     },
     server: {

@@ -1,4 +1,4 @@
-import React, { memo, useState } from 'react'
+import React, { FormEvent, FormEventHandler, memo, useEffect, useRef, useState } from 'react'
 import { Route, Switch, Link, RouteComponentProps } from "react-router-dom";
 
 import page from '/@page/page';
@@ -77,6 +77,16 @@ function Router(props: RouteComponentProps) {
 
     const [getShowPassword, setShowPassword] = useState(false);
 
+    const nameRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        console.log(nameRef.current?.value, '输入');
+    }, [nameRef.current, getVisible])
+
+    const changeInput = (e: FormEvent<HTMLInputElement>) => {
+        console.log(e.currentTarget.value);
+    }
+
     const modalRender = <div className={styles.modalContainer}>
         <p className={styles.modalLogin}>登录</p>
         <form className={styles.loginForm}>
@@ -84,7 +94,7 @@ function Router(props: RouteComponentProps) {
                 <label >用户名</label>
                 <div className={styles.userNameContainer}>
                     <UserOutlined className={`${styles.active} ${styles.user}`}/>
-                    <input type="text" />
+                    <input ref={nameRef} type="text" onInput={(e) => changeInput(e)}/>
                 </div>
             </div>
             <div className={`${styles.username} ${styles.password}`}>
