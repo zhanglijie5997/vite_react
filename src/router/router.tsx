@@ -1,9 +1,9 @@
 import React, { FormEvent, FormEventHandler, memo, useEffect, useRef, useState } from 'react'
 import { Route, Switch, Link, RouteComponentProps } from "react-router-dom";
 
-import page from '/@page/page';
+import page from '@page/page';
 import styles from "./router.module.scss";
-import logo from "/@static/img/logo.png";
+import logo from "@static/img/logo.png";
 import { DownOutlined, EyeInvisibleOutlined, UserOutlined, LockOutlined, EyeOutlined } from "@ant-design/icons";
 import { Button, message, Modal } from "antd";
 function Router(props: RouteComponentProps) {

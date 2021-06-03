@@ -7,8 +7,8 @@ import { Provider } from "react-redux";
 import store from './store';
 import { createBrowserHistory } from 'history';
 import { HashRouter } from 'react-router-dom';
-import "/@static/css/reset.css";
-import "/@static/css/antd_myself.less"
+import "@static/css/reset.css";
+import "@static/css/antd_myself.less"
 
 const stores = store(createBrowserHistory());
 

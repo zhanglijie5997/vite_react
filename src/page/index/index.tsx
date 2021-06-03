@@ -1,20 +1,19 @@
 import React, { useEffect, lazy, Suspense, memo, useState, useMemo, ReactNode, FormEvent, useLayoutEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { RouteComponentProps, useHistory,  } from 'react-router'
-import { getBtcPrice, getBtcPriceType, getBtcPriceTypeList } from '/@http/index';
-import { createToken } from '/@store/commit';
+import { getBtcPrice, getBtcPriceType, getBtcPriceTypeList } from '@http/index';
+import { createToken } from '@store/commit';
 import { Input, Table, Tabs } from "antd";
 import styles from "./index.module.scss";
-import { moneyFormat, throttle } from '/@utils/utils';
+import { moneyFormat, throttle } from '@utils/utils';
 import { ColumnsType } from 'antd/lib/table';
-import { ws } from '/@utils/ws/ws';
+import { ws } from '@utils/ws/ws';
 import { SearchOutlined } from '@ant-design/icons';
+import { useMount, useNetwork, useReactive, useTitle } from 'ahooks';
 const { TabPane } = Tabs;
-const NoData = lazy(() => import("/@components/nodata/nodata"));
+const NoData = lazy(() => import("@components/nodata/nodata"));
 
-
-
-// import styles from "/@/index.module.scss";
+// import styles from "@/index.module.scss";
 const Index =  (props: RouteComponentProps) => {
     const state = useSelector((state: StoreState) => state);
     const dispath = useDispatch();
@@ -24,6 +23,8 @@ const Index =  (props: RouteComponentProps) => {
         { name: "币种介绍", id: 1 },
         { name: "币币", id: 2 },
     ];
+
+    useTitle("index")
 
     const [getLoading, setLoading] = useState(true);
 
@@ -83,12 +84,21 @@ const Index =  (props: RouteComponentProps) => {
         },
     ]);
 
+    const _reactive = useReactive({
+        a: 1
+    });
 
     const [getDefaultColumns, setDefaultColumns] = useState<getBtcPriceTypeList[]>([]);
 
     useEffect(() => {
         test();
     }, [])
+    const r = useNetwork();
+
+    useMount(() => {
+        console.log(`mounted`);
+        console.log(r, '网络状态--');
+    });
 
     useEffect(() => {
         const _ = JSON.parse(kList).data as TicketScoket[];
@@ -153,6 +163,7 @@ const Index =  (props: RouteComponentProps) => {
     return (
         <div >
             <div className={styles.header}>
+                {/* <button onClick={() => {_reactive.a++}}>{_reactive.a}</button> */}
                 <Tabs defaultActiveKey="0"  onChange={callback} tabBarExtraContent={search}>
                     {
                         list.map(_ => <TabPane tab={_.name} key={_.id}>

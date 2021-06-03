@@ -2,8 +2,8 @@ import { message } from 'antd';
 import axios, { AxiosRequestConfig } from 'axios';
 
 import qs from 'qs';
-import { StoreTypes } from '/@store/types';
-import { getStorage } from '/@utils/utils';
+import { StoreTypes } from '@store/types';
+import { getStorage } from '@utils/utils';
 
 const axiosInit = axios.create({
     baseURL: process.env.NODE_ENV === 'production' ? (location.origin.includes('uat.heybooks.net') ? 'https://dev.heybooks.net/front' : 'https://api.heybooks.net/front')  : '/api',

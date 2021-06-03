@@ -2,23 +2,33 @@ import { defineConfig } from 'vite'
 import reactRefresh from '@vitejs/plugin-react-refresh'
 import path from 'path';
 import gzip from "rollup-plugin-gzip";
+import vitePLuginImp from "vite-plugin-imp";
+import { getThemeVariables } from 'antd/dist/theme';
 // https://vitejs.dev/config/
 console.log(process.env.NODE_ENV)
 export default defineConfig({
     plugins: [
         reactRefresh(),
         gzip(),
+        vitePLuginImp({
+            libList: [
+                {
+                    libName: 'antd',
+                    style: (name) => `antd/es/${name}/style`
+                }
+            ]
+        }),
 
     ],
     resolve: {
         alias: {
-            "/@page": path.resolve(__dirname, "src/page"),
-            "/@": path.resolve(__dirname, "src"),
-            "/@static": path.resolve(__dirname, "src/static"),
-            "/@utils": path.resolve(__dirname, "src/utils"),
-            "/@store": path.resolve(__dirname, "src/store"),
-            "/@components": path.resolve(__dirname, "src/components"),
-            "/@http": path.resolve(__dirname, "src/http"),
+            "@page": path.resolve(__dirname, "src/page"),
+            "@": path.resolve(__dirname, "src"),
+            "@static": path.resolve(__dirname, "src/static"),
+            "@utils": path.resolve(__dirname, "src/utils"),
+            "@store": path.resolve(__dirname, "src/store"),
+            "@components": path.resolve(__dirname, "src/components"),
+            "@http": path.resolve(__dirname, "src/http"),
 
         },
     },
@@ -29,9 +39,16 @@ export default defineConfig({
         },
         preprocessorOptions: {
             less: {
-                lessOptions: { // important extra layer for less-loader^6.0.0
-                    javascriptEnabled: true
+                javascriptEnabled: true,
+                modifyVars: {
+                    // 主题
+                    // ...getThemeVariables({
+                    //     dark: true
+                    // })
                 }
+            },
+            scss: {
+                additionalData: `@import "./src/static/css/global.scss";`
             }
         }
     },

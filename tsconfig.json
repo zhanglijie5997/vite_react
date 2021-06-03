@@ -16,13 +16,13 @@
     "noEmit": true,
     "jsx": "react",
     "paths": {
-        "/@*": ["./src/*"],
-        "/@page": ["./src/page/*"],
-        "/@static": ["./src/static/*"],
-        "/@utils": ["./src/utils/*"],
-        "/@store": ["./src/store/*"],
-        "/@components": ["./src/components/*"],
-        "/@http": ["./src/http/*"],
+        "@*": ["./src/*"],
+        "@page": ["./src/page/*"],
+        "@static": ["./src/static/*"],
+        "@utils": ["./src/utils/*"],
+        "@store": ["./src/store/*"],
+        "@components": ["./src/components/*"],
+        "@http": ["./src/http/*"],
 
       }
   },

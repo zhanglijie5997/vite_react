@@ -1,8 +1,8 @@
 import React, { memo, useEffect, useMemo, useRef, useState } from 'react'
 import { Chart, init, } from "klinecharts";
 import styles from "./kline.module.scss";
-import { contractWs } from '/@utils/ws/ws';
-import { perpetualPcPublicInstruments } from '/@http/kline/kline';
+import { contractWs } from '@utils/ws/ws';
+import { perpetualPcPublicInstruments } from '@http/kline/kline';
 
 function getTooltipOptions (candleShowType: string, candleShowRule: string, technicalIndicatorShowRule: string) {
     return {
